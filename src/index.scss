@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @apply bg-[#dddddd];
+}
+
+/* ----------------------------------- */
+
+.error {
+  @apply h-screen flex items-center justify-center text-red-600 text-center text-3xl font-medium;
+}
+.loader {
+  @apply h-screen flex items-center justify-center text-blue-700 text-center text-3xl font-medium;
+}
+
+.app {
+  @apply h-screen p-5 flex justify-center;
+  .category-container {
+    @apply max-w-[400px] w-full pt-4 bg-white rounded-xl overflow-hidden;
+  
+    .title {@apply px-4 mb-2 text-[17px] font-bold;}
+    .category-box {
+      @apply flex flex-col;
+  
+      .category-item {
+        @apply px-4 py-3 flex items-center justify-between hover:bg-[#eeeeee] ease-out duration-200;
+
+        &__left {@apply flex items-center;}
+        &__img {@apply bg-[#3c4556] w-9 h-9 flex items-center justify-center rounded-full;}
+        p {@apply ml-2 max-w-[150px] truncate;}
+      }
+    } 
+  }
+  .payment-container {
+    @apply max-w-[400px] w-full h-full flex flex-col gap-5;
+    
+    .payment-header {
+      @apply flex items-center mb-5;
+      h2 {@apply max-w-[400px] ml-4 leading-7 truncate text-xl font-bold capitalize;}
+    }
+    form {
+      @apply h-full;
+      .payment-content {
+        @apply h-full flex flex-col justify-between gap-5;
+        .payment-box {
+          @apply  p-4 bg-white rounded-xl overflow-hidden;
+          .overview-block {
+            @apply flex items-center mb-5;
+            img {@apply max-w-[60px]}
+            div{
+              @apply ml-3 flex flex-col items-start;
+              .title {@apply p-0 text-lg font-medium capitalize}
+              .body {@apply  text-[#777777]}
+            }
+          }
+
+          .form-block {
+            @apply flex flex-col gap-5;
+            select, input {@apply block w-full p-2.5 bg-[#eeeeee] rounded-lg border border-[#eeeeee] focus:border-gray-400 outline-none;}
+            p {@apply text-red-500 text-xs font-medium }
+          }
+        }
+      }
+      .btn-send {@apply w-full p-2.5 bg-[#18a53c] text-white font-medium rounded-lg;}
+    }
+
+  }
+}
